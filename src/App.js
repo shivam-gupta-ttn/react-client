@@ -1,14 +1,14 @@
-import logo from './logo.svg';
 import './App.css';
 import Home from './container/home';
 import Users from './container/users';
 import About from './container/about';
-import { Route, Switch, withRouter, Redirect } from 'react-router-dom';
+import { Route, Switch} from 'react-router-dom';
 
 function App() {
 
   let routes = (
     <Switch>
+      <Route path="/" exact component={Home}/> 
       <Route path="/home" exact component={Home}/> 
       <Route path="/about" exact component={About} />
       <Route path="/users" exact component={Users}/>

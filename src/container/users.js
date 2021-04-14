@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, {useState } from 'react';
 import axios from 'axios';
 
 
@@ -11,9 +11,7 @@ const Users = () => {
 
 
 })
-        useEffect(()=>{
-            console.log(data)
-        },[data])
+       
 
     const onChangeHandler = (e,event)=>{
         setData({...data,[event]:e.target.value})
@@ -43,9 +41,9 @@ function login(e,data){
     e.preventDefault();
 
     console.log(data);
-    axios.post("http://localhost:5000/login", data)
+    axios.post("http://localhost:5000/register", data)
         .then(res =>{
-            alert(res.data.mesaage);
+            console.log(res.data.data);
         })
         .catch(err =>{
             console.log(err);

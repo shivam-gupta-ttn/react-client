@@ -11,19 +11,27 @@ const Home = () => {
     useEffect(() => {
         axios.get("http://localhost:5000/users")
             .then(res => {
-                console.log(res);
                 setUsers({ fetching:false,users: res.data })
             })
     },[])
     const onDeleteHandler =(index)=>{
-        setUsers(u => {
-            console.log(u);
-
-            return {fetching: false,users : u.users.filter((e,i)=>( i !== index)
+        axios.delete("http://localhost:5000/delete",{data : {payload: index}})
+            .then(res => {
+                console.log(res.data)
+                if(res.data.success){
+                    setUsers(u => {
+                        console.log(u);
+            
+                        return {fetching: false,users : u.users.filter((e,i)=>( i !== index)
+                                
+            
+                        )}
+                    })
                     
-
-            )}
-        })
+                }
+            }).catch(err=>{
+                console.log(err)
+            })
     
 
     }
