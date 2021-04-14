@@ -17,17 +17,12 @@ const Home = () => {
     const onDeleteHandler =(index)=>{
         axios.delete("http://localhost:5000/delete",{data : {payload: index}})
             .then(res => {
-                console.log(res.data)
                 if(res.data.success){
-                    setUsers(u => {
-                        console.log(u);
-            
-                        return {fetching: false,users : u.users.filter((e,i)=>( i !== index)
-                                
-            
+                    setUsers(u => {       
+                        return {fetching: false,users : u.users.filter((e,i)=>( i !== index)     
                         )}
                     })
-                    
+                    alert("Deleted successfully!!")
                 }
             }).catch(err=>{
                 console.log(err)
