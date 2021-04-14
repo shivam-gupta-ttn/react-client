@@ -32,8 +32,6 @@ const Home = () => {
             }).catch(err=>{
                 console.log(err)
             })
-    
-
     }
     return (
         <div>
@@ -44,56 +42,3 @@ const Home = () => {
 
 
 export default Home;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const isFirstRender = React.useRef(true);
-    // React.useEffect(() => {
-    //     if (isFirstRender.current) {
-    //         isFirstRender.current = false;
-    //         return;
-    //     }
-
-    //     showData();
-
-    // });
-
-
-    // const showData = () => {
-    //     let tabledUsers = null;
-    //     const data = { ...users }
-    //     console.log()
-    //     // data.map((item, index) => {
-    //     //    return( tabledUsers = <tr key={index}>
-    //     //         <td>{item.username}</td>
-    //     //         <td>{item.password}</td>
-    //     //         <td>{item.firstname}</td>
-    //     //         <td>{item.lastname}</td>
-    //     //     </tr>)
-
-    //     // })
-    // }
-    // let hits=null;
-    // if(fetchedUsers){
-    //     hits = users.map((item, index) => {
-    //         <tr key={index}>
-    //             <td>{item.username}</td>
-    //             <td>{item.password}</td>
-    //             <td>{item.firstname}</td>
-    //             <td>{item.lastname}</td>
-    //         </tr>
-    //     })
-    // }
